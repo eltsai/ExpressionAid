@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "k-means.h"
 using namespace std;
 
@@ -33,6 +34,6 @@ int main()
 
 	delete []labels;
 	delete kmeans;
-	system("pause");
+	//system("pause");
     return 0;
 }
