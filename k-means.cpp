@@ -2,6 +2,7 @@
 #include <math.h>
 #include <time.h>
 #include <iostream>
+#include <cstring>
 #include "k-means.h"
 using namespace std;
 
