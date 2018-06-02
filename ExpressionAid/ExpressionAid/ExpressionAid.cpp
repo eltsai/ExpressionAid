@@ -1,16 +1,28 @@
-#include "ExpressionAid.h"
+﻿#include "ExpressionAid.h"
 
 ExpressionAid::ExpressionAid(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
 
-	Creat_Action();
-	Creat_ToolBar();
-	//Creat_Menu();
+	Create_Action();
+	Create_ToolBar();
+	//Create_Splitter();
+	splitter = new QSplitter(this);
+	left = new QListView(this);
+	right = new QListView(this);
+	//设置QTextEdit的值
+	left->setBaseSize(400, 600);
+	right->setBaseSize(400, 600);
+
+	//设置到分离器
+	splitter->addWidget(left);
+	splitter->addWidget(right);
+	//设置中心控件
+	setCentralWidget(splitter);
 
 }
-void ExpressionAid::Creat_Action()
+void ExpressionAid::Create_Action()
 {
 
 	actionImport = new QAction(QIcon("Resources/import.png"), tr("&Import"), this);
@@ -32,7 +44,7 @@ void ExpressionAid::Creat_Action()
 	connect(actionHelp, &QAction::triggered, this, &ExpressionAid::Help);
 }
 
-void ExpressionAid::Creat_ToolBar()
+void ExpressionAid::Create_ToolBar()
 {
 	pToolBar = addToolBar(tr("&Main"));
 	pToolBar->addAction(actionImport);
@@ -62,5 +74,18 @@ void ExpressionAid::Help()
 {
 	QMessageBox::about(this, tr("Help"), tr("Expression Aid"));
 }
+
+/*
+void ExpressionAid::Create_Splitter()
+{
+	splitter = new QSplitter(this);
+	listview = new QListView;
+	treeview = new QTreeView;
+	textedit = new QTextEdit;
+	splitter->addWidget(listview);
+	splitter->addWidget(treeview);
+	splitter->addWidget(textedit);
+}
+*/
 
 

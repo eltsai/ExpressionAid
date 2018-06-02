@@ -4,6 +4,10 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QShortcut>
+#include <QSplitter>
+#include <QListView>
+#include <QTreeView>
+#include <QTextEdit>
 #include "ui_ExpressionAid.h"
 
 class ExpressionAid : public QMainWindow
@@ -21,10 +25,17 @@ public:
 	QAction		*actionRun;
 	QAction		*actionStop;
 
-	//void Creat_Menu();
-	void Creat_ToolBar();
-	void Creat_Action();
+	//Splitter
+	QSplitter	*splitter;
+	QListView	*left;
+	QListView	*right;
 
+
+	//void Creat_Menu();
+	void Create_ToolBar();
+	void Create_Action();
+	//void Create_Splitter();
+	
 
 	void Help();
 
