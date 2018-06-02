@@ -2684,7 +2684,7 @@ int main()
 
     const int size = 1335; //Number of samples
     const int dim = 136;   //Dimension of feature
-    const int cluster_num = 20; //Cluster number
+    const int cluster_num = 10; //Cluster number
 
     KMeans* kmeans = new KMeans(dim, cluster_num);
     int* labels = new int[size];
@@ -2693,7 +2693,8 @@ int main()
 
 	for(int i = 0; i < size; ++i)
 	{
-	    printf("%s belongs to %d cluster\n", name[i], labels[i]);
+	    //printf("%s belongs to %d cluster\n", name[i], labels[i]);
+	    printf("%d\n",labels[i]);
 	}
 
 	delete []labels;
